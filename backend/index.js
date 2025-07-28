@@ -27,8 +27,10 @@ initializeFirebase();
 app.use(helmet());
 
 // CORS configuration
+
 app.use(cors({
-  origin: ['http://localhost:5173', 'http://localhost:5174']
+  origin: "https://direction-clinic.vercel.app", // Vercel frontend URL
+  credentials: true
 }));
 
 // Rate limiting
