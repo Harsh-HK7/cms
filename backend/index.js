@@ -29,7 +29,7 @@ app.use(helmet());
 // CORS configuration
 
 app.use(cors({
-  origin: "https://cms-xi-flame.vercel.app/", // Vercel frontend URL
+  origin: "https://cms-xi-flame.vercel.app", // Vercel frontend URL
   credentials: true
 }));
 
