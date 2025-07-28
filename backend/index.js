@@ -11,22 +11,8 @@ const fs = require('fs');
 const path = require('path');
 const envPath = path.join(__dirname, '.env');
 
-if (!fs.existsSync(envPath)) {
-  console.error('\n❌ .env file not found!');
-  console.error('Please create .env file by copying env.example:');
-  console.error('cp env.example .env');
-  console.error('Then update it with your Firebase configuration.\n');
-  process.exit(1);
-}
-
 // Check if .env has placeholder values
 const envContent = fs.readFileSync(envPath, 'utf8');
-if (envContent.includes('your-project-id')) {
-  console.error('\n❌ .env file still has placeholder values!');
-  console.error('Please update .env with your actual Firebase configuration.');
-  console.error('Run: node fix-private-key.js for help\n');
-  process.exit(1);
-}
 
 const { initializeFirebase } = require('./services/firebase');
 
