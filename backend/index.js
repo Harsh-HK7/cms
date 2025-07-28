@@ -33,6 +33,14 @@ app.use(cors({
   credentials: true
 }));
 
+app.get("/", (req, res) => {
+  res.send("🩺 Direction Clinic Backend is running!");
+});
+
+app.head("/", (req, res) => {
+  res.status(200).end();
+});
+
 // Rate limiting
 const limiter = rateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
