@@ -9,10 +9,6 @@ const { logger, logAPI } = require('./services/logger');
 // Check if .env file exists
 const fs = require('fs');
 const path = require('path');
-const envPath = path.join(__dirname, '.env');
-
-// Check if .env has placeholder values
-const envContent = fs.readFileSync(envPath, 'utf8');
 
 const { initializeFirebase } = require('./services/firebase');
 
